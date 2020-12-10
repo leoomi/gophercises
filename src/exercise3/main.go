@@ -36,6 +36,6 @@ func main() {
 	}
 
 	fmt.Println(intro)
-	http.HandleFunc("/", handlers.StoryHandler)
+	http.HandleFunc("/", handlers.StoryHandler(data))
 	http.ListenAndServe(":8080", nil)
 }

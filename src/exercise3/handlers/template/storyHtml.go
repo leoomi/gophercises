@@ -9,12 +9,12 @@ import (
 )
 
 // StoryTemplate ... bru
-func WriteStoryTemplate(w http.ResponseWriter, story models.StoryArc) {
+func WriteStoryTemplate(w http.ResponseWriter, storyArc models.StoryArc) {
 	var tmpl, err = template.ParseFiles("html/story.html")
 
 	if err != nil {
 		fmt.Printf(err.Error())
 		os.Exit(1)
 	}
-	tmpl.Execute(w, nil)
+	tmpl.Execute(w, storyArc)
 }
